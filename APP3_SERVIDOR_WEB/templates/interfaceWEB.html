@@ -1,10 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta http-equiv="refresh" content="10">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        * {
+            font-family: sans-serif; /* Change your font family */
+        }
+
+        .content-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            min-width: 400px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .content-table th,
+        .content-table td {
+            padding: 12px 15px;
+        }
+
+        .content-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .content-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .content-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+
+        .content-table tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+        }
+    </style>
 </head>
+
 <body>
-$END$
+    <form action="http://localhost:5000" method="post">
+        <table id="tablaUsuarios" class="content-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>CORREO ELECTRONICO</th>
+                    <th>PARTIDAS JUGADAS</th>
+                    <th>PARTIDAS GANADAS</th>
+                    <th>PARTIDAS PERDIDAS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in range(nRegistros) %}
+                <tr>
+                    <td class="table-info">{{Datos[i][0]}}</td>
+                    <td class="table-info">{{Datos[i][1]}}</td>
+                    <td class="table-info">{{Datos[i][2]}}</td>
+                    <td class="table-info">{{Datos[i][3]}}</td>
+                    <td class="table-info">{{Datos[i][4]}}</td>
+                    <td class="table-info">{{Datos[i][5]}}</td>
+                    <td class="table-info">{{Datos[i][6]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </form>
+
+    <form action="http://localhost:5000/Registro">
+        <p> <input type="submit" value="Registrar Usuario" class="button"></p>
+    </form>
+
+    <form action="http://127.0.0.1:3000/Correo" method="POST">
+        <p> <input type="submit" value="Enviar Correo" class="button">
+            <!--Acción del botón-->
+            <!--input type="text" name="texto" value=""-->
+        </p>
+    </form>
 </body>
 </html>
+
