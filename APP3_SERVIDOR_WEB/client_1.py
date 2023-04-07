@@ -1,3 +1,8 @@
+"""
+ ANDRES DANIEL RAMIREZ BEJARANO
+ ING EN CONTROL Y AUTOMATIZACION
+"""
+
 import hashlib
 from functools import partial
 from tkinter import messagebox
