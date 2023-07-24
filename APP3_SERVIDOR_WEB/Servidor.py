@@ -24,7 +24,7 @@ class conexion_BD:
 
         self.ORIGEN = "localhost"
         self.USUARIO = "root"
-        self.Contrasena = "AmericaCali-98"
+        self.Contrasena = "12345"
         self.BASEDATOS = "BD_GAME"
 
     def connectBD(self):
