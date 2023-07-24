@@ -17,7 +17,7 @@ class CONEXION_BD:
 
         self.ORIGEN = "localhost"
         self.USUARIO = "root"
-        self.Contrasena = "AmericaCali-98"
+        self.Contrasena = "12345"
         self.BASEDATOS = "BD_GAME"
 
     def connectBD(self):
@@ -54,6 +54,7 @@ def paginaRegistro():
 
 @app.route('/',methods = ['GET', 'POST'])
 def paginaWB():
+
     global connectBD
 
     if request.method == 'POST':

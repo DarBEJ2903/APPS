@@ -139,7 +139,6 @@ if __name__ == '__main__':
 
 
     socket_Server1.bind((Ip_Servidor,Puerto))
-
     socket_Server1.listen()
     Lista_ID_Socket_Clientes = []
     Lista_Direcciones = []
